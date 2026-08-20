@@ -11,7 +11,7 @@
     --border-radius: 12px;
 }
 
-/* --- GLOBAL RESET --- */
+/* GLOBAL RESET */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -25,14 +25,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden; /* Prevents general page scrolling */
+    overflow-x: hidden; 
 }
 
 .interactive-zone {
     container-type: inline-size;
 }
 
-/* --- GLOBAL NAVIGATION BAR --- */
+/* GLOBAL NAVIGATION BAR */
 .main-nav {
     width: 100%;
     background-color: var(--surface-dark);
@@ -46,11 +46,11 @@ body {
     margin-bottom: 2rem;
 }
 
-/* --- BRANDING & LOGO --- */
+/* BRANDING & LOGO */
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 12px; /* Controls the space between the image and the text */
+    gap: 12px; 
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--lavender-glow);
@@ -67,10 +67,10 @@ body {
 /* Mobile Adjustment for Logo */
 @media (max-width: 768px) {
     .nav-brand {
-        font-size: 1.3rem; /* Shrinks the text slightly on mobile */
+        font-size: 1.3rem; 
     }
     .nav-logo-img {
-        height: 32px; /* Shrinks the logo slightly on mobile */
+        height: 32px; 
     }
 }
 
@@ -251,7 +251,7 @@ th {
     transition: fill 0.05s ease-out;
 }
 
-/* --- KEYBOARD TESTER STYLES --- */
+/* KEYBOARD TESTER STYLES */
 .keyboard-container {
     display: flex;
     flex-direction: column;
@@ -271,7 +271,7 @@ th {
     justify-content: center;
 }
 
-/* Base Key Style - Sizes based on a percentage of the container */
+/* Base Key Style */
 .key {
     background: var(--surface-dark);
     border: 1px solid var(--purple-deep);
@@ -311,7 +311,7 @@ th {
     color: var(--text-main);
 }
 
-/* --- TOP TOOLBAR --- */
+/* TOP TOOLBAR */
 .top-toolbar {
     grid-column: 1 / -1;
     display: flex;
@@ -356,15 +356,14 @@ th {
     color: var(--bg-dark);
 }
 
-/* --- KEYBOARD SCROLL FIX --- */
+/* KEYBOARD SCROLL FIX */
 .keyboard-scroll-wrapper {
     width: 100%;
-    overflow-x: auto; /* Allows horizontal swiping */
-    padding-bottom: 1rem; /* Space for the scrollbar */
+    overflow-x: auto; 
+    padding-bottom: 1rem; 
 }
 
 .keyboard-container {
-    /* Keep your existing rules here, but ADD this min-width: */
     min-width: 750px; 
 }
 
@@ -428,9 +427,6 @@ th {
 }
 
 /* Mobile Ad Adjustments */
-/* =========================================
-   MOBILE RESPONSIVENESS (Media Queries)
-   ========================================= */
 @media (max-width: 768px) {
     
     /* 1. Stack the Navigation Bar cleanly */
@@ -499,7 +495,7 @@ th {
     }
 }
 
-/* --- MIC RECORDING STYLES --- */
+/* MIC RECORDING STYLES */
 .record-btn {
     background: var(--surface-dark);
     color: var(--lavender-glow);
