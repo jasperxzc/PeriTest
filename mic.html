@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Mic Tester | Check Microphone Volume & Quality</title>
+    <meta name="description" content="Free online microphone tester. Check your mic's volume levels, visualize audio waveforms, and ensure your input is working properly.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Global Navigation Bar -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="logo.png" alt="PeripheralTest Logo" class="nav-logo-img">
+            PeriTest
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="mouse.html">Mouse</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mouse.html">Mouse Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="keyboard.html">Keyboard</a>
+                <ul class="dropdown-menu">
+                    <li><a href="keyboard.html">Keyboard Tester</a></li>
+                    <li><a href="#">Typing Test (WPM)</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="mic.html">Microphone</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mic.html">Mic Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="speaker.html">Speaker / Headphones</a>
+                <ul class="dropdown-menu">
+                    <li><a href="speaker.html">Left/Right Audio Test</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="webcam.html">Webcam</a>
+                <ul class="dropdown-menu">
+                    <li><a href="webcam.html">Webcam Tester</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Controller</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Gamepad Tester</a></li>
+                    <li><a href="#">Stick Drift Test</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="seo-header">
+        <h1>Microphone Tester</h1>
+        <p>Visualize your audio input and verify your mic is picking up sound.</p>
+    </header>
+
+    <main class="tester-container" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 800px; margin: 0 auto;">
+        
+        <div style="margin-bottom: 2rem;">
+            <button id="start-mic" style="background: var(--purple-deep); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; font-weight: bold;">Request Microphone Access</button>
+            <p id="mic-status" style="color: var(--text-muted); margin-top: 1rem;">Waiting for permission...</p>
+        </div>
+
+        <!-- The Canvas for the Audio Visualizer -->
+        <div class="interactive-zone" style="width: 100%; max-width: 600px; background: var(--bg-dark); border: 2px dashed var(--purple-deep); border-radius: var(--border-radius); padding: 1rem;">
+            <canvas id="mic-visualizer" width="600" height="200" style="width: 100%; height: auto; display: block;"></canvas>
+        </div>
+
+        <!-- Recording & Playback Controls -->
+        <div class="recording-zone" style="margin-top: 2rem; display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%;">
+            <button id="record-btn" class="record-btn disabled" disabled>Start Recording (0:00)</button>
+            <audio id="audio-playback" controls style="display: none; height: 44px;"></audio>
+        </div>
+
+    </main>
+
+    <article class="informational-content">
+        <h2>Comprehensive Online Microphone Tester</h2>
+        <p>Welcome to the most reliable way to test your mic online. Whether you are preparing for an important video conference, streaming, or recording audio, our free browser utility helps you verify that your microphone is capturing sound perfectly.</p>
+
+        <h3>How to Check If Your Mic is Working</h3>
+        <p>Simply click the "Request Microphone Access" button and speak normally. Our tool connects directly to your hardware and renders a real-time oscilloscope waveform. If you see the purple line spiking and rippling in response to your voice, your microphone is successfully picking up and transmitting audio.</p>
+
+        <h3>Troubleshooting Common Microphone Issues</h3>
+        <p>If the waveform remains a flat line while you are speaking, try the following steps:</p>
+        <ul style="text-align: left; max-width: 600px; margin: 1rem auto; color: var(--text-muted);">
+            <li><strong>Check System Permissions:</strong> Ensure your operating system (Windows or macOS) has not globally muted microphone access for web browsers.</li>
+            <li><strong>Verify the Browser Prompt:</strong> Make sure you clicked "Allow" when the browser asked for permission to use your audio input.</li>
+            <li><strong>Hardware Connections:</strong> If using an external USB or 3.5mm headset, unplug it and plug it back in to force the PC to recognize the device.</li>
+        </ul>
+        
+        <!-- AdSense Safe Zone -->
+        <div class="ad-container">
+            <span>Advertisement space reserved.<br>(Layout Shift protected)</span>
+        </div>
+    </article>
+
+    <script src="mic.js"></script>
+</body>
+</html>

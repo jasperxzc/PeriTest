@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Tester & Double Click Test | [Your Brand Name]</title>
+    <meta name="description" content="Free online mouse tester. Check your polling rate, test for double-clicking issues, and verify all mouse buttons are working perfectly.">
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Online Mouse Tester",
+        "description": "Free browser utility to test mouse buttons, track polling rate (Hz), and diagnose hardware double-clicking faults.",
+        "applicationCategory": "Utility",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+</script>
+</head>
+<body>
+    <!-- Global Navigation Bar -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="logo.png" alt="PeripheralTest Logo" class="nav-logo-img">
+            PeriTest
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="mouse.html">Mouse</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mouse.html">Mouse Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="keyboard.html">Keyboard</a>
+                <ul class="dropdown-menu">
+                    <li><a href="keyboard.html">Keyboard Tester</a></li>
+                    <li><a href="#">Typing Test (WPM)</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="mic.html">Microphone</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mic.html">Mic Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="speaker.html">Speaker / Headphones</a>
+                <ul class="dropdown-menu">
+                    <li><a href="speaker.html">Left/Right Audio Test</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="webcam.html">Webcam</a>
+                <ul class="dropdown-menu">
+                    <li><a href="webcam.html">Webcam Tester</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Controller</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Gamepad Tester</a></li>
+                    <li><a href="#">Stick Drift Test</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Header for SEO -->
+    <header class="seo-header">
+        <h1>Online Mouse Tester</h1>
+        <p>Diagnose double-clicks, track your polling rate, and test button functionality.</p>
+    </header>
+
+    <!-- Main Testing Application -->
+    <main class="tester-container">
+        
+        <!-- Left Column: Interactive Mouse & Stats -->
+        <section class="interactive-zone">
+            <!-- Placeholder for the interactive SVG Mouse -->
+            <div id="mouse-svg-container" class="mouse-graphic">
+                <svg id="mouse-svg" viewBox="0 0 200 300" width="100%" height="100%">
+                    <!-- Mouse Body -->
+                    <path d="M50,100 C50,20 150,20 150,100 L150,200 C150,280 50,280 50,200 Z" fill="#1c1c22" stroke="#4a148c" stroke-width="4"/>
+                    
+                    <!-- Left Click (btn-0) -->
+                    <path id="btn-0" d="M50,100 C50,40 95,30 98,30 L98,100 Z" fill="#121215" stroke="#4a148c" stroke-width="3"/>
+                    
+                    <!-- Right Click (btn-2) -->
+                    <path id="btn-2" d="M150,100 C150,40 105,30 102,30 L102,100 Z" fill="#121215" stroke="#4a148c" stroke-width="3"/>
+                    
+                    <!-- Scroll Wheel (btn-1) -->
+                    <rect id="btn-1" x="93" y="45" width="14" height="35" rx="7" fill="#121215" stroke="#4a148c" stroke-width="2"/>
+
+                    <!-- Scroll Direction Arrows -->
+                    <polygon id="arrow-up" points="100,35 95,42 105,42" fill="#121215" stroke="#4a148c" stroke-width="1.5"/>
+                    <polygon id="arrow-down" points="100,90 95,83 105,83" fill="#121215" stroke="#4a148c" stroke-width="1.5"/>
+                    
+                    <!-- Side Button Forward (Physically higher on the mouse graphic) -->
+                    <path id="btn-4" d="M48,110 L40,110 L40,140 L48,140" fill="#121215" stroke="#4a148c" stroke-width="2"/>
+                    
+                    <!-- Side Button Back (Physically lower on the mouse graphic) -->
+                    <path id="btn-3" d="M48,150 L40,150 L40,180 L48,180" fill="#121215" stroke="#4a148c" stroke-width="2"/>
+                    </svg>
+            </div>
+
+            <!-- Live Statistics -->
+            <div class="stats-dashboard">
+                <div class="stat-box">
+                    <span class="stat-label">Polling Rate</span>
+                    <span class="stat-value" id="hz-display">0 Hz</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Last Interval</span>
+                    <span class="stat-value" id="interval-display">0 ms</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Column: Event Log -->
+        <aside class="log-zone">
+            <h2>Event Log</h2>
+            <div class="table-container">
+                <table id="event-log-table">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Button</th>
+                            <th>Time (ms)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="log-body">
+                        <!-- JS will populate rows here -->
+                    </tbody>
+                </table>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- SEO & AdSense Content Area -->
+    <article class="informational-content">
+        <h2>Comprehensive Online Mouse Tester</h2>
+        <p>Welcome to the ultimate tool to diagnose and test your PC peripherals. Whether you are checking for hardware faults, verifying your polling rate, or testing for the infamous double-click issue, our free utility provides millisecond-accurate results right in your browser.</p>
+
+        <h3>How to Check for Double-Clicking</h3>
+        <p>A failing mouse switch will register a single physical click as two rapid inputs. To test this, click the buttons on the interactive graphic above at your normal speed. Monitor the <strong>Last Interval</strong> metric. If you consistently see intervals drop below 20ms on a single intentional click, your hardware switch is likely degrading.</p>
+
+        <h3>Understanding Mouse Polling Rates</h3>
+        <p>Your polling rate indicates how often your mouse reports its position to your PC, measured in Hertz (Hz). A higher polling rate reduces input lag, which is critical for gaming and precise design work. Simply move your cursor continuously across the testing area to calculate your real-time Hz.</p>
+
+        <h3>Common Polling Rate Standards</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Polling Rate</th>
+                    <th>Report Time</th>
+                    <th>Best Use Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>125 Hz</td>
+                    <td>8.0 ms</td>
+                    <td>Standard office and web browsing</td>
+                </tr>
+                <tr>
+                    <td>500 Hz</td>
+                    <td>2.0 ms</td>
+                    <td>Casual and single-player gaming</td>
+                </tr>
+                <tr>
+                    <td>1000+ Hz</td>
+                    <td>1.0 ms or less</td>
+                    <td>Competitive gaming and high-end rigs</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- AdSense Safe Zone -->
+        <div class="ad-container">
+            <span>Advertisement space reserved.<br>(Layout Shift protected)</span>
+        </div>
+
+    </article>
+
+    <script src="mouse.js"></script>
+</body>
+</html>

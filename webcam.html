@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Webcam Tester | Check Your Camera Quality</title>
+    <meta name="description" content="Free online webcam tester. Verify your camera is working, check your video quality, and take snapshot tests securely in your browser.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Global Navigation Bar -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="logo.png" alt="PeripheralTest Logo" class="nav-logo-img">
+            PeriTest
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="mouse.html">Mouse</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mouse.html">Mouse Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="keyboard.html">Keyboard</a>
+                <ul class="dropdown-menu">
+                    <li><a href="keyboard.html">Keyboard Tester</a></li>
+                    <li><a href="#">Typing Test (WPM)</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="mic.html">Microphone</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mic.html">Mic Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="speaker.html">Speaker / Headphones</a>
+                <ul class="dropdown-menu">
+                    <li><a href="speaker.html">Left/Right Audio Test</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="webcam.html">Webcam</a>
+                <ul class="dropdown-menu">
+                    <li><a href="webcam.html">Webcam Tester</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Controller</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Gamepad Tester</a></li>
+                    <li><a href="#">Stick Drift Test</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="seo-header">
+        <h1>Webcam Tester</h1>
+        <p>Check your video feed, framing, and image quality securely.</p>
+    </header>
+
+    <main class="tester-container" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 800px; margin: 0 auto;">
+        
+        <div style="margin-bottom: 2rem;">
+            <button id="start-cam" style="background: var(--purple-deep); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; font-weight: bold;">Request Camera Access</button>
+            <p id="cam-status" style="color: var(--text-muted); margin-top: 1rem;">Waiting for permission...</p>
+        </div>
+
+        <!-- Live Video Feed -->
+        <div class="interactive-zone" style="width: 100%; max-width: 640px; background: var(--bg-dark); border: 2px dashed var(--purple-deep); border-radius: var(--border-radius); padding: 1rem; position: relative;">
+            <video id="webcam-feed" autoplay playsinline style="width: 100%; border-radius: 8px; background: #000; transform: scaleX(-1);"></video>
+            
+            <!-- Snapshot feature -->
+            <div style="margin-top: 1rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                <button id="snapshot-btn" class="record-btn disabled" disabled>Take Snapshot</button>
+                <canvas id="snapshot-canvas" style="display: none; width: 100%; max-width: 320px; border-radius: 8px; border: 2px solid var(--lavender-glow);"></canvas>
+            </div>
+        </div>
+
+    </main>
+
+    <article class="informational-content">
+        <h2>Complete Online Webcam Tester</h2>
+        <p>Use our free camera testing utility to ensure you are ready for your next video call, stream, or online exam. By checking your webcam beforehand, you can adjust your lighting, fix your framing, and verify that your hardware is transmitting a clean signal.</p>
+
+        <h3>How to Test Your Camera Online</h3>
+        <p>Click the "Request Camera Access" button above. Your browser will prompt you for permission to use your camera. Once approved, your live video feed will appear. We apply a mirror effect to the feed, making it behave exactly like a physical mirror for easier framing.</p>
+
+        <h3>100% Private and Secure</h3>
+        <p>Privacy is our top priority. This webcam tester runs entirely within your local browser. No video data, streams, or snapshots are ever recorded, saved, or uploaded to our servers. What happens on your screen stays on your device.</p>
+        
+        <!-- AdSense Safe Zone -->
+        <div class="ad-container">
+            <span>Advertisement space reserved.<br>(Layout Shift protected)</span>
+        </div>
+    </article>
+
+    <script src="webcam.js"></script>
+</body>
+</html>

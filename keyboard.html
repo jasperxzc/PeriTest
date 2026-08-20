@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Tester | Check for Ghosting, Chatter, & NKRO</title>
+    <meta name="description" content="Free online keyboard tester. Verify all your keys are working, test N-Key Rollover (NKRO), and check mechanical switches for key chatter and ghosting.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Global Navigation Bar -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="logo.png" alt="PeripheralTest Logo" class="nav-logo-img">
+            PeriTest
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="mouse.html">Mouse</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mouse.html">Mouse Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="keyboard.html">Keyboard</a>
+                <ul class="dropdown-menu">
+                    <li><a href="keyboard.html">Keyboard Tester</a></li>
+                    <li><a href="#">Typing Test (WPM)</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="mic.html">Microphone</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mic.html">Mic Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="speaker.html">Speaker / Headphones</a>
+                <ul class="dropdown-menu">
+                    <li><a href="speaker.html">Left/Right Audio Test</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="webcam.html">Webcam</a>
+                <ul class="dropdown-menu">
+                    <li><a href="webcam.html">Webcam Tester</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Controller</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Gamepad Tester</a></li>
+                    <li><a href="#">Stick Drift Test</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Main Header for SEO -->
+    <header class="seo-header">
+        <h1>Online Keyboard Tester</h1>
+        <p>Test your layout, diagnose key chatter, and check your N-Key Rollover.</p>
+    </header>
+
+    <!-- Main Testing Application -->
+    <main class="tester-container">
+        
+        <!-- Top Toolbar for Layout Selection -->
+        <div class="top-toolbar">
+            <div class="layout-selector">
+                <label for="layout-select">Keyboard Layout:</label>
+                <select id="layout-select">
+                    <option value="full">Full-Size (104 Key)</option>
+                    <option value="tkl">Tenkeyless (TKL / 87 Key)</option>
+                    <option value="60">60% Compact</option>
+                </select>
+            </div>
+            <button id="reset-keyboard">Reset Keys</button>
+        </div>
+
+        <!-- Left Column: Interactive Keyboard -->
+        <section class="interactive-zone" style="grid-column: 1 / -1;">
+            
+            <!-- Live Keyboard Stats -->
+            <div class="stats-dashboard" style="margin-bottom: 2rem;">
+                <div class="stat-box">
+                    <span class="stat-label">Simultaneous Keys (NKRO)</span>
+                    <span class="stat-value" id="nkro-display">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Max Keys Pressed</span>
+                    <span class="stat-value" id="max-nkro-display">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Chatter (Last Interval)</span>
+                    <span class="stat-value" id="chatter-display">---</span>
+                </div>
+            </div>
+
+            <!-- Scrollable Wrapper for Mobile -->
+            <div class="keyboard-scroll-wrapper">
+                <div id="keyboard-container" class="keyboard-container">
+                    <!-- JavaScript will inject the 104 keys here -->
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <!-- SEO & AdSense Content Area (Specific to Keyboards) -->
+    <article class="informational-content">
+        <h2>How to Test Your Mechanical Keyboard</h2>
+        <p>Our comprehensive keyboard tester is designed to help you verify the health of your mechanical switches and membrane domes. Simply press the keys on your physical board, and the corresponding digital key will light up to confirm actuation.</p>
+
+        <h3>Checking for Key Chatter</h3>
+        <p>Key chatter occurs when a mechanical switch begins to fail, sending multiple input signals to the PC from a single physical press. If you notice a key registering twice instantly on our tester, your switch may need cleaning or replacing.</p>
+
+        <h3>What is N-Key Rollover (NKRO) and Ghosting?</h3>
+        <p><strong>Ghosting</strong> happens when a keyboard fails to register multiple simultaneous key presses, effectively "dropping" inputs. High-end gaming keyboards feature <strong>N-Key Rollover (NKRO)</strong>, meaning every single key can be pressed at the same time and the hardware will register all of them without dropping a single signal.</p>
+        
+        <!-- AdSense Safe Zone -->
+        <div class="ad-container">
+            <span>Advertisement space reserved.<br>(Layout Shift protected)</span>
+        </div>
+    </article>
+
+    <script src="keyboard.js"></script>
+</body>
+</html>

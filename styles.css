@@ -1,0 +1,538 @@
+:root {
+    /* Brand Colors */
+    --bg-dark: #121215;
+    --surface-dark: #1c1c22;
+    --purple-deep: #4a148c;
+    --lavender-glow: #b388ff;
+    --text-main: #f5f5f7;
+    --text-muted: #a0a0b0;
+    
+    /* Layout */
+    --border-radius: 12px;
+}
+
+/* --- GLOBAL RESET --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; /* Prevents general page scrolling */
+}
+.interactive-zone {
+    container-type: inline-size;
+}
+
+/* --- GLOBAL NAVIGATION BAR --- */
+.main-nav {
+    width: 100%;
+    background-color: var(--surface-dark);
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--purple-deep);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+/* --- BRANDING & LOGO --- */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Controls the space between the image and the text */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--lavender-glow);
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.nav-logo-img {
+    height: 50px; /* Locks the logo height to fit the nav bar */
+    width: auto;  /* Maintains the original aspect ratio */
+    display: block;
+}
+
+/* Mobile Adjustment for Logo */
+@media (max-width: 768px) {
+    .nav-brand {
+        font-size: 1.3rem; /* Shrinks the text slightly on mobile */
+    }
+    .nav-logo-img {
+        height: 32px; /* Shrinks the logo slightly on mobile */
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links > li {
+    position: relative;
+    padding: 1.5rem 1rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--lavender-glow);
+}
+
+/* Dropdown Menu Logic */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--surface-dark);
+    border: 1px solid var(--purple-deep);
+    border-radius: 0 0 8px 8px;
+    list-style: none;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--purple-deep);
+    color: #fff;
+}
+
+/* SEO Header */
+.seo-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.seo-header h1 {
+    color: var(--lavender-glow);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Application Layout */
+.tester-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--surface-dark);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    /* Prevents right-click menu from popping up while testing */
+    user-select: none; 
+    -webkit-user-select: none;
+}
+
+/* Mouse Graphic & Stats */
+.interactive-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mouse-graphic {
+    height: 300px;
+    background-color: var(--bg-dark);
+    border: 2px dashed var(--purple-deep);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.1s ease;
+}
+
+/* This class will be toggled by JS when a button is pressed */
+.mouse-graphic.active-click {
+    box-shadow: 0 0 20px var(--lavender-glow);
+    border-color: var(--lavender-glow);
+}
+
+.stats-dashboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.stat-box {
+    background: var(--bg-dark);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    flex: 1;
+    text-align: center;
+    border-bottom: 3px solid var(--purple-deep);
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--lavender-glow);
+    margin-top: 0.5rem;
+}
+
+/* Event Log Table */
+.log-zone {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-container {
+    height: 380px;
+    overflow-y: auto;
+    background: var(--bg-dark);
+    border-radius: var(--border-radius);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--surface-dark);
+}
+
+th {
+    background-color: var(--purple-deep);
+    position: sticky;
+    top: 0;
+}
+
+/* Informational Content (SEO) */
+.informational-content {
+    max-width: 800px;
+    margin-top: 3rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* Illuminates specific SVG paths based on user input */
+.active-svg-part {
+    fill: var(--lavender-glow) !important;
+    transition: fill 0.05s ease-out;
+}
+
+/* --- KEYBOARD TESTER STYLES --- */
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5cqw; /* Gap scales dynamically */
+    background: var(--bg-dark);
+    padding: 1.5cqw;
+    border-radius: var(--border-radius);
+    border: 2px dashed var(--purple-deep);
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* No more horizontal scrolling */
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 0.5cqw;
+    justify-content: center;
+}
+
+/* Base Key Style - Sizes based on a percentage of the container */
+.key {
+    background: var(--surface-dark);
+    border: 1px solid var(--purple-deep);
+    border-radius: 0.5cqw;
+    min-width: 3.8cqw; 
+    height: 3.8cqw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 1cqw;
+    font-weight: 500;
+    user-select: none;
+    transition: background-color 0.1s, transform 0.05s, box-shadow 0.1s;
+    box-sizing: border-box;
+}
+
+/* Scaled Modifiers for specific keys */
+.key.w-1-5 { min-width: 5.7cqw; } 
+.key.w-1-75 { min-width: 6.6cqw; } 
+.key.w-2 { min-width: 7.6cqw; } 
+.key.w-2-25 { min-width: 8.5cqw; } 
+.key.w-space { min-width: 24cqw; } 
+.key.spacer { background: transparent; border: none; min-width: 1.5cqw; } 
+
+/* Active States */
+.key.active-key {
+    background: var(--lavender-glow);
+    color: var(--bg-dark);
+    transform: scale(0.92);
+    box-shadow: 0 0 10px var(--lavender-glow);
+    border-color: var(--lavender-glow);
+}
+
+.key.registered-key {
+    border-color: var(--lavender-glow);
+    color: var(--text-main);
+}
+
+/* --- TOP TOOLBAR --- */
+.top-toolbar {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-dark);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    border: 1px solid var(--surface-dark);
+}
+
+.layout-selector label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: var(--lavender-glow);
+}
+
+.layout-selector select {
+    padding: 8px 12px;
+    background: var(--surface-dark);
+    color: var(--text-main);
+    border: 1px solid var(--purple-deep);
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#reset-keyboard {
+    background: var(--purple-deep);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#reset-keyboard:hover {
+    background: var(--lavender-glow);
+    color: var(--bg-dark);
+}
+
+/* --- KEYBOARD SCROLL FIX --- */
+.keyboard-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Allows horizontal swiping */
+    padding-bottom: 1rem; /* Space for the scrollbar */
+}
+
+.keyboard-container {
+    /* Keep your existing rules here, but ADD this min-width: */
+    min-width: 750px; 
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    /* Stack the Navigation Bar */
+    .main-nav {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .nav-links > li {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Stack the Testing Columns */
+    .tester-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    /* Stack Statistics Boxes */
+    .stats-dashboard {
+        flex-direction: column;
+    }
+
+    /* Limit Event Log Height on Mobile */
+    .table-container {
+        height: 250px; 
+    }
+
+    /* Adjust Keyboard Font Size for tiny keys */
+    .key {
+        font-size: 1.5cqw; 
+    }
+}
+
+/* AdSense Space */
+.ad-container {
+    width: 100%;
+    max-width: 728px; /* Standard AdSense Leaderboard width */
+    margin: 2rem auto;
+    background-color: rgba(74, 20, 140, 0.1); /* Faint placeholder background */
+    border: 1px dashed rgba(74, 20, 140, 0.5);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+    
+    /* Crucial for SEO: Reserves space to prevent Layout Shift */
+    min-height: 90px; 
+}
+
+/* Mobile Ad Adjustments */
+/* =========================================
+   MOBILE RESPONSIVENESS (Media Queries)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Stack the Navigation Bar cleanly */
+    .main-nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-brand {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 0;
+    }
+
+    .nav-links > li {
+        width: 100%;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(74, 20, 140, 0.3);
+    }
+
+    /* 2. Stack the Toolbar Elements */
+    .top-toolbar {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .layout-selector select {
+        width: 100%;
+        margin-top: 0.8rem;
+    }
+
+    /* 3. Force Statistics to Stack Vertically */
+    .stats-dashboard {
+        display: flex;
+        flex-direction: column !important;
+        gap: 1rem;
+    }
+
+    .stat-box {
+        width: 100%;
+    }
+
+    /* 4. Fix Main Grid Spacing */
+    .tester-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .interactive-zone {
+        padding: 0;
+    }
+
+    /* 5. Mobile Ad Container */
+    .ad-container {
+        max-width: 300px;
+        min-height: 250px;
+        margin: 2rem auto;
+    }
+}
+
+/* --- MIC RECORDING STYLES --- */
+.record-btn {
+    background: var(--surface-dark);
+    color: var(--lavender-glow);
+    border: 2px solid var(--purple-deep);
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.record-btn:not(.disabled):hover {
+    background: var(--purple-deep);
+    color: white;
+}
+
+/* Active Recording State with CSS Animation */
+.record-btn.active-record {
+    background: #ff5252;
+    color: white;
+    border-color: #ff5252;
+    animation: pulse-red 1.5s infinite;
+}
+
+.record-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: var(--surface-dark);
+    color: var(--text-muted);
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 82, 82, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+}

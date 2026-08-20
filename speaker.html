@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Left Right Audio Test | Speaker & Headphones Tester</title>
+    <meta name="description" content="Test your left and right audio channels instantly. Verify your speakers or headphones are wired correctly with our free stereo panning tool.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Global Navigation Bar -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-brand">
+            <img src="logo.png" alt="PeripheralTest Logo" class="nav-logo-img">
+            PeriTest
+        </a>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="mouse.html">Mouse</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mouse.html">Mouse Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="keyboard.html">Keyboard</a>
+                <ul class="dropdown-menu">
+                    <li><a href="keyboard.html">Keyboard Tester</a></li>
+                    <li><a href="#">Typing Test (WPM)</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="mic.html">Microphone</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mic.html">Mic Tester</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="speaker.html">Speaker / Headphones</a>
+                <ul class="dropdown-menu">
+                    <li><a href="speaker.html">Left/Right Audio Test</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="webcam.html">Webcam</a>
+                <ul class="dropdown-menu">
+                    <li><a href="webcam.html">Webcam Tester</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Controller</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Gamepad Tester</a></li>
+                    <li><a href="#">Stick Drift Test</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="seo-header">
+        <h1>Left / Right Audio Tester</h1>
+        <p>Verify your stereo channels and ensure your audio balance is correct.</p>
+    </header>
+
+    <main class="tester-container" style="display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 0 auto;">
+        
+        <div class="interactive-zone" style="width: 100%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; padding: 3rem 1rem; background: var(--bg-dark); border: 2px dashed var(--purple-deep); border-radius: var(--border-radius);">
+            
+            <button id="play-left" style="background: var(--surface-dark); color: var(--lavender-glow); border: 2px solid var(--purple-deep); padding: 20px 40px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.2s;">Play Left Channel</button>
+            
+            <button id="play-both" style="background: var(--purple-deep); color: white; border: none; padding: 20px 40px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.2s;">Play Center (Both)</button>
+            
+            <button id="play-right" style="background: var(--surface-dark); color: var(--lavender-glow); border: 2px solid var(--purple-deep); padding: 20px 40px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.2s;">Play Right Channel</button>
+
+        </div>
+
+    </main>
+
+    <article class="informational-content">
+        <h2>Free Left / Right Audio Test</h2>
+        <p>Welcome to our stereo audio testing utility. Whether you are setting up a new surround sound system, checking a pair of wireless earbuds, or diagnosing a faulty audio cable, this tool allows you to isolate sound to individual channels instantly.</p>
+
+        <h3>How to Test Your Stereo Speakers or Headphones</h3>
+        <p>Put your headphones on or sit in the center of your speaker setup. Click the <strong>Play Left Channel</strong> or <strong>Play Right Channel</strong> buttons. A clean, 440Hz test tone will play for 1.5 seconds exclusively out of the selected side. If you click the left button but hear the tone in your right ear, your headphones are reversed or your audio cables are plugged into the wrong ports.</p>
+
+        <h3>Diagnosing "No Sound" Issues</h3>
+        <p>If you click the center <strong>Play Center (Both)</strong> button and only hear audio from one side, you may be experiencing a hardware fault. For wired headsets, check for frayed cables or dirt in the 3.5mm audio jack. For Bluetooth devices, try unpairing and reconnecting the headset to your PC to reset the stereo handshake.</p>
+        
+        <!-- AdSense Safe Zone -->
+        <div class="ad-container">
+            <span>Advertisement space reserved.<br>(Layout Shift protected)</span>
+        </div>
+    </article>
+
+    <script src="speaker.js"></script>
+</body>
+</html>
