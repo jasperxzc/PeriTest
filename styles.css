@@ -623,3 +623,50 @@ body[data-theme="light"] .key.registered-key {
 #webcam-feed {
     background-color: var(--bg-dark) !important; /* Overrides inline #000 */
 }
+
+.headphone-svg {
+    max-width: 400px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* Interactive Group Base */
+.hp-interact {
+    cursor: pointer;
+}
+
+/* Hover States */
+.hp-interact:hover .hp-pad,
+.hp-interact:hover .hp-center-bg {
+    stroke: var(--lavender-glow);
+    fill: rgba(179, 136, 255, 0.1);
+}
+.hp-interact:hover .hp-text {
+    fill: var(--lavender-glow);
+}
+
+/* Active / Playing Animation */
+.hp-interact.is-playing .hp-pad,
+.hp-interact.is-playing .hp-center-bg {
+    stroke: var(--lavender-glow);
+    fill: var(--lavender-glow);
+}
+.hp-interact.is-playing .hp-text {
+    fill: var(--bg-dark);
+}
+.hp-interact.is-playing .hp-play-icon {
+    fill: var(--bg-dark);
+}
+
+/* Sound Wave pulsing animation for active earcup */
+.hp-interact.is-playing .hp-shell {
+    stroke: #ff5252; /* Bright contrast color when actively testing */
+    animation: hp-pulse 0.8s infinite alternate;
+}
+
+@keyframes hp-pulse {
+    0% { stroke-width: 6; opacity: 0.7; }
+    100% { stroke-width: 10; opacity: 1; }
+}

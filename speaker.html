@@ -71,14 +71,39 @@
 
     <main class="tester-container" style="display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 0 auto;">
         
-        <div class="interactive-zone" style="width: 100%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; padding: 3rem 1rem; background: var(--bg-dark); border: 2px dashed var(--purple-deep); border-radius: var(--border-radius);">
-            
-            <button id="play-left" style="background: var(--surface-dark); color: var(--lavender-glow); border: 2px solid var(--purple-deep); padding: 20px 40px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.2s;">Play Left Channel</button>
-            
-            <button id="play-both" style="background: var(--purple-deep); color: white; border: none; padding: 20px 40px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.2s;">Play Center (Both)</button>
-            
-            <button id="play-right" style="background: var(--surface-dark); color: var(--lavender-glow); border: 2px solid var(--purple-deep); padding: 20px 40px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.2s;">Play Right Channel</button>
+        <div class="interactive-zone" style="text-align: center;">
+            <!-- Interactive Headphone SVG -->
+            <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" class="headphone-svg">
+                
+                <!-- Headband (Static) -->
+                <path d="M 60 90 C 60 20, 180 20, 180 90" fill="none" stroke="var(--text-main)" stroke-width="10" stroke-linecap="round"/>
+                <path d="M 75 50 C 100 30, 140 30, 165 50" fill="none" stroke="var(--surface-dark)" stroke-width="8" stroke-linecap="round"/>
 
+                <!-- Left Earcup (Clickable) -->
+                <g id="left-ear" class="hp-interact">
+                    <!-- Earpad -->
+                    <rect x="40" y="70" width="25" height="70" rx="12" fill="var(--bg-dark)" stroke="var(--text-main)" stroke-width="4" class="hp-pad"/>
+                    <!-- Outer Shell -->
+                    <path d="M 40 85 Q 25 105 40 125" fill="none" stroke="var(--purple-deep)" stroke-width="6" stroke-linecap="round" class="hp-shell"/>
+                    <text x="52.5" y="110" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="14" fill="var(--text-main)" class="hp-text">L</text>
+                </g>
+
+                <!-- Right Earcup (Clickable) -->
+                <g id="right-ear" class="hp-interact">
+                    <!-- Earpad -->
+                    <rect x="175" y="70" width="25" height="70" rx="12" fill="var(--bg-dark)" stroke="var(--text-main)" stroke-width="4" class="hp-pad"/>
+                    <!-- Outer Shell -->
+                    <path d="M 200 85 Q 215 105 200 125" fill="none" stroke="var(--purple-deep)" stroke-width="6" stroke-linecap="round" class="hp-shell"/>
+                    <text x="187.5" y="110" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="14" fill="var(--text-main)" class="hp-text">R</text>
+                </g>
+
+                <!-- Center Play Button (Clickable) -->
+                <g id="center-play" class="hp-interact">
+                    <circle cx="120" cy="115" r="24" fill="var(--bg-dark)" stroke="var(--purple-deep)" stroke-width="3" class="hp-center-bg"/>
+                    <polygon points="112,103 112,127 132,115" fill="var(--lavender-glow)" class="hp-play-icon"/>
+                    <text x="120" y="155" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="12" fill="var(--text-muted)">BOTH (L+R)</text>
+                </g>
+            </svg>
         </div>
 
     </main>
