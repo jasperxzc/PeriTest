@@ -71,37 +71,42 @@
 
     <main class="tester-container" style="display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 0 auto;">
         
-        <div class="interactive-zone" style="text-align: center;">
-            <!-- Interactive Headphone SVG -->
-            <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" class="headphone-svg">
+        <div class="interactive-zone" style="width: 100%; text-align: center;">
+            <!-- Premium Interactive Headphone SVG -->
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="headphone-svg">
                 
-                <!-- Headband (Static) -->
-                <path d="M 60 90 C 60 20, 180 20, 180 90" fill="none" stroke="var(--text-main)" stroke-width="10" stroke-linecap="round"/>
-                <path d="M 75 50 C 100 30, 140 30, 165 50" fill="none" stroke="var(--surface-dark)" stroke-width="8" stroke-linecap="round"/>
+                <!-- Outer Headband -->
+                <path d="M 95 160 C 95 30, 305 30, 305 160" fill="none" stroke="var(--text-main)" stroke-width="20" stroke-linecap="round"/>
+                <!-- Inner Headband Padding -->
+                <path d="M 120 120 C 150 70, 250 70, 280 120" fill="none" stroke="var(--surface-dark)" stroke-width="12" stroke-linecap="round"/>
+                
+                <!-- Metal Yokes (Sliders holding the cups) -->
+                <path d="M 95 160 L 95 210" fill="none" stroke="var(--text-muted)" stroke-width="8" stroke-linecap="round"/>
+                <path d="M 305 160 L 305 210" fill="none" stroke="var(--text-muted)" stroke-width="8" stroke-linecap="round"/>
 
                 <!-- Left Earcup (Clickable) -->
                 <g id="left-ear" class="hp-interact">
-                    <!-- Earpad -->
-                    <rect x="40" y="70" width="25" height="70" rx="12" fill="var(--bg-dark)" stroke="var(--text-main)" stroke-width="4" class="hp-pad"/>
-                    <!-- Outer Shell -->
-                    <path d="M 40 85 Q 25 105 40 125" fill="none" stroke="var(--purple-deep)" stroke-width="6" stroke-linecap="round" class="hp-shell"/>
-                    <text x="52.5" y="110" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="14" fill="var(--text-main)" class="hp-text">L</text>
+                    <!-- Plush Cushion -->
+                    <rect x="120" y="160" width="20" height="130" rx="10" fill="var(--surface-dark)" stroke="var(--text-muted)" stroke-width="2" class="hp-pad"/>
+                    <!-- Aluminum Cup Exterior -->
+                    <rect x="70" y="150" width="50" height="150" rx="25" fill="var(--bg-dark)" stroke="var(--purple-deep)" stroke-width="4" class="hp-shell"/>
+                    <text x="95" y="233" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="var(--text-main)" class="hp-text">L</text>
                 </g>
 
                 <!-- Right Earcup (Clickable) -->
                 <g id="right-ear" class="hp-interact">
-                    <!-- Earpad -->
-                    <rect x="175" y="70" width="25" height="70" rx="12" fill="var(--bg-dark)" stroke="var(--text-main)" stroke-width="4" class="hp-pad"/>
-                    <!-- Outer Shell -->
-                    <path d="M 200 85 Q 215 105 200 125" fill="none" stroke="var(--purple-deep)" stroke-width="6" stroke-linecap="round" class="hp-shell"/>
-                    <text x="187.5" y="110" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="14" fill="var(--text-main)" class="hp-text">R</text>
+                    <!-- Plush Cushion -->
+                    <rect x="260" y="160" width="20" height="130" rx="10" fill="var(--surface-dark)" stroke="var(--text-muted)" stroke-width="2" class="hp-pad"/>
+                    <!-- Aluminum Cup Exterior -->
+                    <rect x="280" y="150" width="50" height="150" rx="25" fill="var(--bg-dark)" stroke="var(--purple-deep)" stroke-width="4" class="hp-shell"/>
+                    <text x="305" y="233" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="var(--text-main)" class="hp-text">R</text>
                 </g>
 
                 <!-- Center Play Button (Clickable) -->
                 <g id="center-play" class="hp-interact">
-                    <circle cx="120" cy="115" r="24" fill="var(--bg-dark)" stroke="var(--purple-deep)" stroke-width="3" class="hp-center-bg"/>
-                    <polygon points="112,103 112,127 132,115" fill="var(--lavender-glow)" class="hp-play-icon"/>
-                    <text x="120" y="155" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="12" fill="var(--text-muted)">BOTH (L+R)</text>
+                    <circle cx="200" cy="225" r="35" fill="var(--bg-dark)" stroke="var(--purple-deep)" stroke-width="4" class="hp-center-bg"/>
+                    <polygon points="190,208 190,242 218,225" fill="var(--lavender-glow)" class="hp-play-icon"/>
+                    <text x="200" y="285" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="14" fill="var(--text-muted)" class="hp-text-center">TEST BOTH</text>
                 </g>
             </svg>
         </div>

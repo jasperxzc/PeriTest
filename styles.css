@@ -624,9 +624,13 @@ body[data-theme="light"] .key.registered-key {
     background-color: var(--bg-dark) !important; /* Overrides inline #000 */
 }
 
+/* =========================================
+   PREMIUM SPEAKER / HEADPHONE SVG STYLES
+   ========================================= */
 .headphone-svg {
-    max-width: 400px;
+    max-width: 450px;
     width: 100%;
+    height: 400px; /* Matches the new 400x400 viewBox */
     display: block;
     margin: 0 auto;
     overflow: visible;
@@ -635,38 +639,59 @@ body[data-theme="light"] .key.registered-key {
 /* Interactive Group Base */
 .hp-interact {
     cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.hp-interact:active {
+    transform: scale(0.97); /* Adds a satisfying "click" physical press effect */
 }
 
 /* Hover States */
-.hp-interact:hover .hp-pad,
+.hp-interact:hover .hp-shell,
 .hp-interact:hover .hp-center-bg {
     stroke: var(--lavender-glow);
-    fill: rgba(179, 136, 255, 0.1);
+    fill: rgba(179, 136, 255, 0.05);
 }
-.hp-interact:hover .hp-text {
+.hp-interact:hover .hp-text,
+.hp-interact:hover .hp-text-center {
     fill: var(--lavender-glow);
 }
 
-/* Active / Playing Animation */
-.hp-interact.is-playing .hp-pad,
+/* Active / Playing State */
+.hp-interact.is-playing .hp-pad {
+    stroke: var(--lavender-glow);
+    fill: rgba(179, 136, 255, 0.2);
+}
+
 .hp-interact.is-playing .hp-center-bg {
     stroke: var(--lavender-glow);
     fill: var(--lavender-glow);
 }
-.hp-interact.is-playing .hp-text {
-    fill: var(--bg-dark);
+.hp-interact.is-playing .hp-text-center {
+    fill: var(--text-main);
 }
 .hp-interact.is-playing .hp-play-icon {
     fill: var(--bg-dark);
 }
 
-/* Sound Wave pulsing animation for active earcup */
+/* Vibrant Sound Wave Glowing Animation */
 .hp-interact.is-playing .hp-shell {
-    stroke: #ff5252; /* Bright contrast color when actively testing */
-    animation: hp-pulse 0.8s infinite alternate;
+    stroke: #ff5252;
+    fill: rgba(255, 82, 82, 0.05);
+    animation: hp-glow-pulse 0.6s infinite alternate ease-in-out;
 }
 
-@keyframes hp-pulse {
-    0% { stroke-width: 6; opacity: 0.7; }
-    100% { stroke-width: 10; opacity: 1; }
+.hp-interact.is-playing .hp-text {
+    fill: #ff5252; /* Makes the L/R letter match the glow */
+}
+
+@keyframes hp-glow-pulse {
+    0% { 
+        stroke-width: 4; 
+        filter: drop-shadow(0 0 2px rgba(255, 82, 82, 0.3)); 
+    }
+    100% { 
+        stroke-width: 8; 
+        filter: drop-shadow(0 0 15px rgba(255, 82, 82, 0.8)); 
+    }
 }
