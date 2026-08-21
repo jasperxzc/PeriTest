@@ -11,6 +11,44 @@
     --border-radius: 12px;
 }
 
+/* --- LIGHT MODE OVERRIDES --- */
+body[data-theme="light"] {
+    --bg-dark: #f4f5f7;       /* Light gray background */
+    --surface-dark: #ffffff;  /* Clean white cards/zones */
+    --text-main: #121215;     /* Dark gray/black text */
+    --text-muted: #5f6368;    /* Medium gray for secondary text */
+    --purple-deep: #7e57c2;   /* Slightly adjusted purple for contrast */
+    --lavender-glow: #4a148c; /* Darker purple for headings on light backgrounds */
+}
+
+/* --- THEME TOGGLE BUTTON STYLES --- */
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--purple-deep);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--purple-deep);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        margin: 1rem auto 0 auto; /* Centers the button on mobile nav */
+    }
+}
+
 /* GLOBAL RESET */
 *, *::before, *::after {
     box-sizing: border-box;
