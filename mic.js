@@ -15,8 +15,7 @@ let isRecording = false;
 // Canvas setup
 const WIDTH = canvas.width;
 const HEIGHT = canvas.height;
-canvasCtx.fillStyle = '#121215'; 
-canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
 
 btnStart.addEventListener('click', async () => {
     if (audioCtx && audioCtx.state === 'running') return;
@@ -88,15 +87,19 @@ btnRecord.addEventListener('click', () => {
     }
 });
 
-// The Animation Loop
+// The Animation Loop (Themed for Light/Dark Mode)
 function drawWaveform() {
     requestAnimationFrame(drawWaveform);
     analyser.getByteTimeDomainData(dataArray);
 
-    canvasCtx.fillStyle = '#121215'; 
-    canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+    // 1. Clear the canvas to transparent so CSS backgrounds show through
+    canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
+    
+    // 2. Fetch the current CSS variable color for the stroke dynamically
+    const strokeColor = getComputedStyle(document.body).getPropertyValue('--lavender-glow').trim();
+    
     canvasCtx.lineWidth = 3;
-    canvasCtx.strokeStyle = '#b388ff'; 
+    canvasCtx.strokeStyle = strokeColor || '#b388ff'; // Fallback just in case
     canvasCtx.beginPath();
 
     const sliceWidth = WIDTH * 1.0 / analyser.frequencyBinCount;

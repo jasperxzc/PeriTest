@@ -601,3 +601,25 @@ th {
     70% { box-shadow: 0 0 0 15px rgba(255, 82, 82, 0); }
     100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
 }
+
+/* Light mode optimizations */
+/* 1. Mouse Graphic Light Mode Fix */
+body[data-theme="light"] .mouse-graphic svg path:not(.active-svg-part),
+body[data-theme="light"] .mouse-graphic svg rect:not(.active-svg-part),
+body[data-theme="light"] .mouse-graphic svg ellipse:not(.active-svg-part) {
+    fill: #e8eaed; /* Light gray body instead of black */
+    stroke: var(--purple-deep);
+}
+
+/* 2. Keyboard "Already Pressed" Keys Light Mode Fix */
+body[data-theme="light"] .key.registered-key {
+    background-color: rgba(126, 87, 194, 0.15); /* Soft purple background */
+    border-color: var(--purple-deep);
+    color: var(--purple-deep);
+    font-weight: bold;
+}
+
+/* 4. Webcam Feed Background Fix */
+#webcam-feed {
+    background-color: var(--bg-dark) !important; /* Overrides inline #000 */
+}
