@@ -48,15 +48,15 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="mic.html">Microphone</a>
-                <ul class="dropdown-menu">
-                    <li><a href="mic.html">Mic Tester</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
                 <a href="speaker.html">Speaker / Headphones</a>
                 <ul class="dropdown-menu">
                     <li><a href="speaker.html">Left/Right Audio Test</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="mic.html">Microphone</a>
+                <ul class="dropdown-menu">
+                    <li><a href="mic.html">Mic Tester</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -73,8 +73,20 @@
                     <li><a href="#">Stick Drift Test</a></li>
                 </ul>
             </li>
-            <li style="list-style: none;">
-                <button id="theme-toggle" class="theme-toggle" title="Toggle Light/Dark Mode">☀️</button>
+            <li>
+                <button id="theme-toggle" class="theme-toggle" title="Toggle Light/Dark Mode" aria-label="Toggle Light/Dark Mode">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                </button>
             </li>
         </ul>
     </nav>
